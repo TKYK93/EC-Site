@@ -3,6 +3,7 @@ import { useStateValue } from './StateProvider';
 import "./Checkout.css";
 import CheckoutProduct from './CheckoutProduct';
 import Subtotal from './Subtotal';
+import { MotorcycleSharp } from '@material-ui/icons';
 
 const Checkout = () => {
     const [{basket, user}] = useStateValue();
@@ -26,7 +27,7 @@ const Checkout = () => {
                     {basket?.map((item)=>(
                         
                         <CheckoutProduct
-                        key={item.id}
+                        key={Math.random()* 100000}
                         id={item.id}
                         title={item.title}
                         image={item.image}

@@ -43,6 +43,8 @@ const Payment = () => {
 
     );
 
+    console.log("The secret is", clientSecret);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setProcessing(true);
@@ -92,7 +94,7 @@ const Payment = () => {
                     <div className="payment_items">
                             {basket.map(item => (
                                 <CheckoutProduct
-                                   key={item.id}
+                                   key={Math.random()*100000}
                                    id={item.id}
                                    title={item.title}
                                    image={item.image}

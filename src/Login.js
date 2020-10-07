@@ -31,7 +31,10 @@ const Login = () => {
     return (
         <div className="login">
             <Link to='/'>
-            <img className="login_logo" src="http://pngimg.com/uploads/potato_chips/potato_chips_PNG48.png"/>
+            <img 
+            className="login_logo" 
+            src="http://pngimg.com/uploads/potato_chips/potato_chips_PNG48.png"
+            alt=""/>
             </Link>
 
             <div className="login_container">
