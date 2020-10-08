@@ -41,7 +41,7 @@ const Header = () => {
                     </div>
                 </Link>
 
-                <Link to="/" className="header_link">
+                <Link to="/orders" className="header_link">
                     {/* 文字のためにspan */}
                     <div className="header_option">
                         <span className="header_option1">Returns</span>
