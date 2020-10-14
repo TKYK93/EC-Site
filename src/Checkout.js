@@ -3,7 +3,7 @@ import { useStateValue } from './StateProvider';
 import "./Checkout.css";
 import CheckoutProduct from './CheckoutProduct';
 import Subtotal from './Subtotal';
-import { MotorcycleSharp } from '@material-ui/icons';
+import FlipMove from 'react-flip-move';
 
 const Checkout = () => {
     const [{basket, user}] = useStateValue();
@@ -22,9 +22,9 @@ const Checkout = () => {
                  <h2 className="checkout_title">Your Shopping Basket</h2>
                  
                 
-                 <div className="checkout_flip">
-                     
-                    {basket?.map((item)=>(
+                 {/* <div className="checkout_flip"> */}
+                     <FlipMove>
+                     {basket?.map((item)=>(
                         
                         <CheckoutProduct
                         key={Math.random()* 100000}
@@ -34,13 +34,11 @@ const Checkout = () => {
                         price={item.price}
                         rating={item.rating}
                         />
-                     
-                        
                     ))
                     
                     }
-                   
-                 </div>
+                     </FlipMove>
+                 {/* </div> */}
                  
                  
                
