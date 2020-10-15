@@ -65,14 +65,7 @@ const Header = () => {
                     <span className="header_option2 header_basketCount">{basket?.length}</span>
 
                     </div>
-                
-                
                 </Link>
-
-
-             
-            
-
             </div>
 
             

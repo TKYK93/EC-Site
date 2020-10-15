@@ -7,7 +7,7 @@ import Order from './Order';
 // 注文をdatabaseに送信するため
 const Orders = () => {
     const [orders, setOrders] = useState([]);
-    const [{basket, user}, dispatch] = useStateValue();
+    const [{ user }, ] = useStateValue();
 
     useEffect(()=>{
         if(user){
@@ -30,7 +30,7 @@ const Orders = () => {
             <h1>Your Orders</h1>
             <div className="orders_order">
                 {orders?.map(order => (
-                    <Order order={order} />
+                    <Order key={order.id} order={order} />
                 ))}
             </div>
 
