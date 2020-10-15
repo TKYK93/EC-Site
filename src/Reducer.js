@@ -3,6 +3,7 @@
 export const initialState = {
     basket: [],
     user: null,
+    searchedWord: null,
 };
 
 export const getBasketTotal = (basket) => (
@@ -45,6 +46,18 @@ const reducer = (state, action) => {
             return{
                 ...state,
                 user: action.user,
+            }
+        
+        case 'SET_SEARCHED_WORD':
+            return{
+                ...state,
+                searchedWord: action.searchedWord,
+            }
+        
+        case 'DELETE_SEARCHED_WORD':
+            return {
+                ...state,
+                searchedWord: null,
             }
 
 

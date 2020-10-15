@@ -1,10 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Product from './Product';
 import './Home.css';
+import { useStateValue } from './StateProvider';
 
 const Home = () => {
 
+    const [{searchedWord}] = useStateValue();
+    const [searchedProduct, setSearchedProduct] = useState([]);
+
+    // useEffective(()=>{
+    //     const 
+    // }, []);
+
+
     return(
+        
+        
         <div className="home">
             <img 
             src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80"
@@ -12,7 +23,9 @@ const Home = () => {
             className="home_image"
             />
 
+            { (!searchedWord &&
             <div className="home_row">
+
                 <Product 
                 id= "7"
                 // key={Math.random()*100000}
@@ -55,6 +68,7 @@ const Home = () => {
                 rating={3}
                 />
             </div>
+            )}
             
 
         </div>
