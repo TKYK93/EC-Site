@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Product from './Product';
 import './Home.css';
 import { useStateValue } from './StateProvider';
@@ -6,11 +6,62 @@ import { useStateValue } from './StateProvider';
 const Home = () => {
 
     const [{searchedWord}] = useStateValue();
-    const [searchedProduct, setSearchedProduct] = useState([]);
+    const [searchedProducts, setSearchedProducts] = useState([]);
+    const products = [
+     { 
+        id: 7,
+        title:"OLW Sourcream and Onion",
+        image:"https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-Sourcream-Onion-800x750.png",
+        price:100,
+        rating:3,
+    },
+      {  
+        id:8,
+        title:"OLW Dill and Graslok",
+        image:"https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-Dill-Gr%C3%A4sl%C3%B6k-800x750.png", 
+        price:100,
+        rating:3,
+    },
+    {
+        id:9,
+        title:"OLW 3*Onion",
+        image:"https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-3xL%C3%96K-800x750.png",
+        price:100,
+        rating:3,
+    }, 
+     {
+        id:10,
+        title:"OLW Grill",
+        image:"https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-Grill-800x750.png",
+        price:100,
+        rating:3,
+     },
+     {
+        id:11,
+        title:"Estrella Dill",
+        image:"https://www.estrella.se/content/uploads/2020/05/thumbnails/10647-dill-275g-475-400x0.png",
+        price:100,
+        rating:3,
+     },
+    ];
 
-    // useEffective(()=>{
-    //     const 
-    // }, []);
+    useEffect(()=>{
+        console.log("searchedWord in Home is ", searchedWord);
+        if(searchedWord!==null){
+        const searchProduct = (searchedWord) => {
+            products.map((product)=>{
+                if(product.title.includes(searchedWord)){
+                    setSearchedProducts(searchedProducts=>[...searchedProducts,product]);
+                }
+            });
+        };
+        searchProduct(searchedWord);
+        }else{
+            setSearchedProducts([]);
+        };
+        console.log("the searchedProducts(array) is ", searchedProducts);
+     
+    }, [searchedWord]);
 
 
     return(
@@ -23,53 +74,39 @@ const Home = () => {
             className="home_image"
             />
 
-            { (!searchedWord &&
-            <div className="home_row">
+        <div className="home_row">
+            { 
+           
+                searchedWord ? (
+                    searchedProducts?.map(searchedProduct=>(
+                        <Product 
+                            key={Math.random()*100000}
+                            id={searchedProduct.id}
+                            title={searchedProduct.title}
+                            image={searchedProduct.image}
+                            price={searchedProduct.price}
+                            rating={searchedProduct.rating}
+                        />
+                    )     
+                )
 
-                <Product 
-                id= "7"
-                // key={Math.random()*100000}
-                title="OLW Sourcream and Onion"
-                image="https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-Sourcream-Onion-800x750.png"
-                price={100}
-                rating={3}
-                />
-                 <Product 
-                id= "8"
-                // key={Math.random()*100000}
-                title="OLW Dill and Graslok"
-                image="https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-Dill-Gr%C3%A4sl%C3%B6k-800x750.png" 
-                price={100}
-                rating={3}
-                />
-                 <Product 
-                id="9"
-                // key={Math.random()*100000}
-                title="OLW 3*Onion"
-                image="https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-3xL%C3%96K-800x750.png" 
-                price={100}
-                rating={3}
-                />
-                 <Product 
-                id="10"
-                // key={Math.random()*100000}
-                title="OLW Grill"
-                image="https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-Grill-800x750.png" 
-                price={100}
-                rating={3}
-                />
+                ) : (
+                  
 
-                <Product 
-                id="10"
-                // key={Math.random()*100000}
-                title="Estrella Dill"
-                image="https://www.estrella.se/content/uploads/2020/05/thumbnails/10647-dill-275g-475-400x0.png" 
-                price={100}
-                rating={3}
-                />
+                    products?.map(product=>(
+                        <Product 
+                            key={Math.random()*100000}
+                            id={product.id}
+                            title={product.title}
+                            image={product.image}
+                            price={product.price}
+                            rating={product.rating}
+                        />
+                   )
+                )
+                )      
+            } 
             </div>
-            )}
-            
 
         </div>
 
@@ -77,3 +114,46 @@ const Home = () => {
 }
 
 export default Home;
+
+// {   <Product 
+//     id= "7"
+//     // key={Math.random()*100000}
+//     title="OLW Sourcream and Onion"
+//     image="https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-Sourcream-Onion-800x750.png"
+//     price={100}
+//     rating={3}
+//     />},
+//   {   <Product 
+//     id= "8"
+//     // key={Math.random()*100000}
+//     title="OLW Dill and Graslok"
+//     image="https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-Dill-Gr%C3%A4sl%C3%B6k-800x750.png" 
+//     price={100}
+//     rating={3}
+//     /> },
+//      <Product 
+//     id="9"
+//     // key={Math.random()*100000}
+//     title="OLW 3*Onion"
+//     image="https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-3xL%C3%96K-800x750.png" 
+//     price={100}
+//     rating={3}
+//     />
+//      <Product 
+//     id="10"
+//     // key={Math.random()*100000}
+//     title="OLW Grill"
+//     image="https://brands-b.prod.onewp.net/app/uploads/sites/41/2018/12/OLW-CHIPS-Grill-800x750.png" 
+//     price={100}
+//     rating={3}
+//     />
+
+//     <Product 
+//     id="10"
+//     // key={Math.random()*100000}
+//     title="Estrella Dill"
+//     image="https://www.estrella.se/content/uploads/2020/05/thumbnails/10647-dill-275g-475-400x0.png" 
+//     price={100}
+//     rating={3}
+//     />
+// ];

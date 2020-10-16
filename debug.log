@@ -61,3 +61,4 @@
 [1016/020104.269:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Program Files (x86)\Microsoft\Edge\Application\86.0.622.38\msedge.dll
 [1016/020104.269:ERROR:process_memory_win.cc(73)] ReadMemory at 0x7ffa608f0000 of 64 bytes failed: ReadProcessMemory 要求または WriteProcessMemory 要求の一部だけを完了しました。 (0x12B)
 [1016/020104.269:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\Program Files (x86)\Microsoft\Edge\Application\86.0.622.38\msedge.dll
+[1016/155548.998:ERROR:directory_reader_win.cc(43)] FindFirstFile: 指定されたパスが見つかりません。 (0x3)

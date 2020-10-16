@@ -49,11 +49,16 @@ const reducer = (state, action) => {
             }
         
         case 'SET_SEARCHED_WORD':
+            let test = action.searchedWord;
+            console.log("the searchedWord in reducer is ", test);
+          
             return{
                 ...state,
                 searchedWord: action.searchedWord,
             }
-        
+            
+
+            
         case 'DELETE_SEARCHED_WORD':
             return {
                 ...state,

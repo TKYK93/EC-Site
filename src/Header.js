@@ -31,10 +31,11 @@ const Header = () => {
 
     const textHandler = (e) => {
         
-        if(e.target.value===null){
+        if(e.target.value===""){
             dispatch({
                 type: 'DELETE_SEARCHED_WORD',
             });
+            console.log("no word in search bar")
         }else {
             setInput(e.target.value);
         }
@@ -47,7 +48,7 @@ const Header = () => {
             type: 'SET_SEARCHED_WORD',
             searchedWord: input,
         });
-        console.log(input);
+        console.log(input, " has been sent");
         setInput("");
     };
 
