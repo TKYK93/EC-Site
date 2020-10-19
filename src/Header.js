@@ -6,6 +6,8 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
 import { IconButton } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 
 const Header = () => {
     const [{basket, user}, dispatch] = useStateValue();
@@ -19,15 +21,8 @@ const Header = () => {
     };
 
     const toggleHandler = () => {
-        if(toggle===false){
-            setToggle(true);
-            console.log(toggle);
-        }else{
-            setToggle(false);
-            console.log(toggle);
-        }
-        
-    }
+        setToggle(!toggle);
+    };
 
     const textHandler = (e) => {
         
@@ -40,7 +35,7 @@ const Header = () => {
             setInput(e.target.value);
         }
 
-    }
+    };
 
     const searchedWordHandler = (e) => {
         // e.preventDefault();
@@ -89,11 +84,11 @@ const Header = () => {
                     </div>
                 </Link>
 
-                <Link to="/" className="header_link">
+                <Link to="/favorite" className="header_link">
                     {/* 文字のためにspan */}
                     <div className="header_option">
                         <span className="header_option1">Your</span>
-                        <span className="header_option2">Prime</span>
+                        <span className="header_option2">Favorite</span>
                     </div>
                 </Link>
 
@@ -110,9 +105,7 @@ const Header = () => {
 
             {/* toggle humburger */}
             <div onClick={toggleHandler} className="header_toggle">
-                <div className="header_toggleLine1"></div>
-                <div className="header_toggleLine2"></div>
-                <div className="header_toggleLine3"></div>
+                {toggle ?  <CloseIcon/> : <MenuIcon/>}
             </div>
 
             

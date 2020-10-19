@@ -43,7 +43,25 @@ const Home = () => {
         price:100,
         rating:3,
      },
+     {
+        id:12,
+        title:"Estrella Cripy Bcon & Sourcream",
+        image:"https://www.estrella.se/content/uploads/2020/05/thumbnails/10963-crispy-bacon-sourcream-275g-871-400x0.png",
+        price:100,
+        rating:3,
+     },
+     {
+        id:12,
+        title:"Estrella Sourcream & Onion",
+        image:"https://www.estrella.se/content/uploads/2020/04/thumbnails/10645-sourcream-onion-275g-836-400x0.png",
+        price:100,
+        rating:3,
+     },
+     
+
     ];
+
+     
 
     useEffect(()=>{
         console.log("searchedWord in Home is ", searchedWord);
