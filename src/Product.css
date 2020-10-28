@@ -14,8 +14,7 @@
 }
 
 .product_info{
-    height: 100px;
-    margin-bottom: 5px;
+    height: 80px;
 }
 
 .product_price{
@@ -24,7 +23,15 @@
 
 .product_rating{
     display: flex;
+}
 
+.product_favorite {
+    margin-bottom: 10px;
+    color: rgb(219, 82, 105);
+}
+
+.product_favorite:hover {
+  transform: scale(1.2);    
 }
 
 .product > img {
@@ -42,10 +49,9 @@
 .product > button {
     background-color: orange;
     border: 1px solid;
-
 }
 
 .product > button:hover {
     cursor: pointer;
-
 }
+

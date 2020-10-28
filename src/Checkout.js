@@ -6,9 +6,10 @@ import Subtotal from './Subtotal';
 import FlipMove from 'react-flip-move';
 
 const Checkout = () => {
-    const [{basket, user}] = useStateValue();
+    const [{ basket, user }] = useStateValue();
    
     return (
+        
         <div className="checkout">
          <div className="checkout_left">
          {basket?.length === 0 ? (
@@ -21,8 +22,6 @@ const Checkout = () => {
                  <h3>Hello, {user?.email}</h3>
                  <h2 className="checkout_title">Your Shopping Basket</h2>
                  
-                
-                 {/* <div className="checkout_flip"> */}
                      <FlipMove>
                      {basket?.map((item)=>(
                         
@@ -35,12 +34,8 @@ const Checkout = () => {
                         rating={item.rating}
                         />
                     ))
-                    
                     }
                      </FlipMove>
-                 {/* </div> */}
-                 
-                 
                
              </div>
          )
@@ -53,7 +48,6 @@ const Checkout = () => {
                  <Subtotal />
              </div>
          )}
-
 
         </div>
     )

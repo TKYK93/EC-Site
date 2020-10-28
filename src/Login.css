@@ -23,7 +23,6 @@
     border-radius: 5px;
     border: 1px solid lightgray;
     padding: 20px;
-
 }
 
 .login_container > h1 {
@@ -54,7 +53,6 @@
     height: 30px;
     border: 1px solid;
     margin-top: 10px;
-
 }
 
 .login_registerButton{
@@ -64,5 +62,4 @@
     height: 30px;
     border: 1px solid;
     margin-top: 10px;
-    
 }

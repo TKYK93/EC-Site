@@ -24,8 +24,10 @@
 }
 
 .checkoutProduct_info > button {
-background-color: orange;
-border: 1px solid;
-margin-top: 10px;
-color: black;
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+    border: 1px solid;
+    margin-top: 10px;
+    color: black;
 }

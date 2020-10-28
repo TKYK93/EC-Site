@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import './Login.css';
-import {auth} from './firebase';
+import { auth } from './firebase';
 
 const Login = () => {
     const history = useHistory();
@@ -24,11 +24,10 @@ const Login = () => {
             if(auth){history.push('/')}
         })
         .catch(error=>alert(error.message));
-    
-    
     }
     
     return (
+        
         <div className="login">
             <Link to='/'>
             <img 

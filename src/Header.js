@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Header.css';
 import {Link} from 'react-router-dom';
 import SearchIcon from '@material-ui/icons/Search';
@@ -25,7 +25,6 @@ const Header = () => {
     };
 
     const textHandler = (e) => {
-        
         if(e.target.value===""){
             dispatch({
                 type: 'DELETE_SEARCHED_WORD',
@@ -34,20 +33,18 @@ const Header = () => {
         }else {
             setInput(e.target.value);
         }
-
     };
 
     const searchedWordHandler = (e) => {
-        // e.preventDefault();
         dispatch({
             type: 'SET_SEARCHED_WORD',
             searchedWord: input,
         });
-        console.log(input, " has been sent");
         setInput("");
     };
 
     return(
+        
         <nav className={`header ${toggle && "header_active"}`}> 
             {/* logo */}
             <Link to="/">
@@ -69,7 +66,6 @@ const Header = () => {
             {/* 3 Links  + basketicon*/}
             <div className={`header_nav  ${toggle && "header_nav_active"}`}>
                 <Link to="/login" className="header_link">
-                    {/* 文字のためにspan */}
                     <div onClick={handleAuthentication} className="header_option">
                     <span className="header_option1">Hello, {user ? user.email : 'Guest'}</span>
                         <span className="header_option2">{user ? 'Sign Out' : 'Sign In' }</span>
@@ -77,7 +73,6 @@ const Header = () => {
                 </Link>
 
                 <Link to="/orders" className="header_link">
-                    {/* 文字のためにspan */}
                     <div className="header_option">
                         <span className="header_option1">Returns</span>
                         <span className="header_option2">&Orders</span>
@@ -85,7 +80,6 @@ const Header = () => {
                 </Link>
 
                 <Link to="/favorite" className="header_link">
-                    {/* 文字のためにspan */}
                     <div className="header_option">
                         <span className="header_option1">Your</span>
                         <span className="header_option2">Favorite</span>
@@ -98,7 +92,6 @@ const Header = () => {
                         <ShoppingCartIcon />
                         {/* number */}
                     <span className="header_option2 header_basketCount">{basket?.length}</span>
-
                     </div>
                 </Link>
             </div>
@@ -107,12 +100,10 @@ const Header = () => {
             <div onClick={toggleHandler} className="header_toggle">
                 {toggle ?  <CloseIcon/> : <MenuIcon/>}
             </div>
-
-            
+ 
         </nav>
 
     )
-
 
 };
 

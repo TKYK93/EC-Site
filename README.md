@@ -1,1 +1,9 @@
-This project was built based on the instructuion provided by Clever Programmer.
+## About this project
+This project was built in accordance with the instructuion provided by Clever Programmer.
+
+## Built With 
+- React
+- Firebase (Cloud Firestore, Authentication)
+- Express
+- Stripe
+- MaterialUI

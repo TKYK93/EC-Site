@@ -14,7 +14,7 @@ const firebaseConfig = {
 
   const firebaseApp = firebase.initializeApp(firebaseConfig);
   
-//   データベース初期化
+//   initialize detabase
   const db = firebaseApp.firestore();
   const auth = firebase.auth();
 

@@ -14,7 +14,6 @@ const Payment = () => {
     const [{basket, user}, dispatch] = useStateValue();
     const history  = useHistory();
 
-
     const stripe = useStripe();
     const elements = useElements();
 
@@ -27,14 +26,14 @@ const Payment = () => {
 
     const [clientSecret, setClientSecret]= useState(true);
 
-    // stripeに命令するために、useEffectで、clientSecretを生成する。ただし、バスケットの中身が変われば、再度生成する。
+    // Create a ClientSecret in useEffect to use Stripe. 
+    // In case basket has changed, create a new ClientSecret.
     useEffect(()=> {
         const getClientSecret = async () => {
-            // axiosとは、情報を送るのに必要なもの
+            // send information by axios
             const response = await axios(
                 {
                     method: 'post',
-                    //URLは``であって、''でないことに注意
                     url: `/payments/create?total=${getBasketTotal(basket) * 100}`
                 }
             );
@@ -45,7 +44,7 @@ const Payment = () => {
 
     );
 
-    console.log("The secret is", clientSecret);
+    console.log("The ClientSecret is", clientSecret);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -55,7 +54,7 @@ const Payment = () => {
             payment_method: {
                 card: elements.getElement(CardElement)
             }
-        }).then(({paymentIntent})=>{
+        }).then(({ paymentIntent })=>{
             // not id, but uid
             db.collection('users').doc(user?.uid).collection('orders').doc(paymentIntent.id)
             .set({
@@ -82,8 +81,8 @@ const Payment = () => {
         setError(e.error ? e.error.message : "");
     };
 
-
     return (
+
         <div className="payment">
             <div className="payment_container">
              <h1>Checkout (<Link to="/checkout">{basket?.length}items</Link>)</h1>
@@ -142,11 +141,10 @@ const Payment = () => {
                                 </button>
                             </div>
 
-                                    {error && <div>{error}</div>}
+                                {error && <div>{error}</div>}
 
                         </form>
-                    </div>
-                    
+                    </div>  
                 </div>
             </div>
         </div>

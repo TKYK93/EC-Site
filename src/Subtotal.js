@@ -28,7 +28,7 @@ const Subtotal = () => {
               thousdandSepartor={true}
               prefix={"$"}
             />
-            {/* e無しではどうなるのか？ */}
+            
             <button onClick={e=>history.push('/payment')}>Proceed to Checkout</button>
 
         </div>
