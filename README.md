@@ -3,7 +3,7 @@ This project was built in accordance with the instructuion provided by Clever Pr
 
 ## Built With 
 - React
-- Firebase (Cloud Firestore, Authentication)
+- Firebase (Cloud Firestore, Authentication, Functions)
 - Express
 - Stripe
 - MaterialUI
