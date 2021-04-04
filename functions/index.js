@@ -5,8 +5,7 @@ const express = require('express');
 const cors = require('cors');
 const { response } = require('express');
 
-const stripe = require('stripe')
-('sk_test_XXXXXX');
+const stripe = require('stripe')("sk_test_51HXk4aL1NgF4Uea9BYP5nKyVAqxVIHzuScC7y1h1EgedvupGLkeAE8xdasykWZx7aq8sDd9ZKfdCiZsnqO5g0taD00ohAMwniu");
 
 // API
 
@@ -14,11 +13,10 @@ const stripe = require('stripe')
 const app = express();
 
 //Middlewears
-app.use(cors({ origi: true }));
+app.use(cors({ origin: true }));
 app.use(express.json());
 
 // API routes
-app.get('/', (request, response) => response.status(200).send('Hello World 2'));
 app.post('/payments/create', async (request, response) => {
     const total = request.query.total;
 
@@ -38,5 +36,3 @@ app.post('/payments/create', async (request, response) => {
 
 //Listen command
 exports.api = functions.https.onRequest(app);
-
-// http://localhost:5001/test-ecsite/us-central1/api

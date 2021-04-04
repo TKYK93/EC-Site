@@ -37,14 +37,14 @@ const Payment = () => {
                     url: `/payments/create?total=${getBasketTotal(basket) * 100}`
                 }
             );
+            console.log("cilent_secret is", response.data.clientSecret);
             setClientSecret(response.data.clientSecret)
+            
         }
         getClientSecret();
     }, [basket]
 
     );
-
-    console.log("The ClientSecret is", clientSecret);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

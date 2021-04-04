@@ -22,7 +22,7 @@ const Checkout = () => {
                  <h3>Hello, {user?.email}</h3>
                  <h2 className="checkout_title">Your Shopping Basket</h2>
                  
-                     <FlipMove>
+                     <FlipMove staggerDelayBy={100}>
                      {basket?.map((item)=>(
                         
                         <CheckoutProduct
