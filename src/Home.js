@@ -85,37 +85,37 @@ const Home = () => {
             className="home_image"
             />
 
-        <div className="home_row">
-            { 
-           
-                searchedWord ? (
-                    searchedProducts?.map(searchedProduct=>(
-                        <Product 
-                            key={Math.random()*100000}
-                            id={searchedProduct.id}
-                            title={searchedProduct.title}
-                            image={searchedProduct.image}
-                            price={searchedProduct.price}
-                            rating={searchedProduct.rating}
-                        />
-                    )     
-                )
+            <div className="home_row">
+                { 
+            
+                    searchedWord ? (
+                        searchedProducts?.map(searchedProduct=>(
+                            <Product 
+                                key={Math.random()*100000}
+                                id={searchedProduct.id}
+                                title={searchedProduct.title}
+                                image={searchedProduct.image}
+                                price={searchedProduct.price}
+                                rating={searchedProduct.rating}
+                            />
+                        )     
+                    )
 
-                ) : (
+                    ) : (
 
-                    products?.map(product=>(
-                        <Product 
-                            key={Math.random()*100000}
-                            id={product.id}
-                            title={product.title}
-                            image={product.image}
-                            price={product.price}
-                            rating={product.rating}
-                        />
-                   )
-                )
-                )      
-            } 
+                        products?.map(product=>(
+                            <Product 
+                                key={Math.random()*100000}
+                                id={product.id}
+                                title={product.title}
+                                image={product.image}
+                                price={product.price}
+                                rating={product.rating}
+                            />
+                    )
+                    )
+                    )      
+                } 
             </div>
 
         </div>
