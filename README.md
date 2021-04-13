@@ -1,5 +1,5 @@
 ## About this project
-This projectis a test EC site similar to Amazon.
+This project is a test EC site similar to Amazon.
 
 ## Built With 
 - React
