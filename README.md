@@ -1,5 +1,5 @@
 ## About this project
-This project was built in accordance with the instructuion provided by Clever Programmer.
+This projectis a test EC site similar to Amazon.
 
 ## Built With 
 - React
