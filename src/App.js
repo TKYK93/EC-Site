@@ -21,9 +21,7 @@ function App() {
 
   useEffect(()=>{
   //  For the purpose of tracking user
-  auth.onAuthStateChanged(authUser => {
-    console.log('The user is: ', authUser);
-    
+  auth.onAuthStateChanged(authUser => {    
     if(authUser) {
        dispatch(
          {

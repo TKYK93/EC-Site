@@ -22,7 +22,6 @@ const Product = ({id, title, image, price, rating}) => {
             image: image,
         },
     });
-        console.log("favorite: ", {favorite});
     };
 
     const addToBasket = () => {
@@ -37,7 +36,6 @@ const Product = ({id, title, image, price, rating}) => {
             image: image,
         },
     });
-        console.log("basket: ", {basket});
     };
 
     return (

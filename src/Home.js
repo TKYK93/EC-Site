@@ -73,7 +73,6 @@ const Home = () => {
         }else{
             setSearchedProducts([]);
         };
-        console.log("the searchedProducts(array) is ", searchedProducts);
      
     }, [searchedWord]);
 

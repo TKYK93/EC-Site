@@ -25,7 +25,6 @@ const CheckoutProduct = forwardRef(({ id, title, image, price, rating, hideRemov
             image: image,
         },
     });
-        console.log("basket: ", {basket});
     };
 
     const removeFromFavotite = () => {

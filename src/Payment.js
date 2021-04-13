@@ -44,8 +44,6 @@ const Payment = () => {
 
     );
 
-    console.log("The ClientSecret is", clientSecret);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setProcessing(true);
