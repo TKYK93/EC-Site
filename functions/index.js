@@ -4,12 +4,8 @@ const express = require('express');
 
 const cors = require('cors');
 
-<<<<<<< HEAD
 const stripe = require('stripe')
 (REACT_APP_STRIPE_KEY);
-=======
-const stripe = require('stripe')("sk_test_51HXk4aL1NgF4Uea9BYP5nKyVAqxVIHzuScC7y1h1EgedvupGLkeAE8xdasykWZx7aq8sDd9ZKfdCiZsnqO5g0taD00ohAMwniu");
->>>>>>> 659be02ce8ee7a8857ba616209ee16576e6bf9ac
 
 const app = express();
 
