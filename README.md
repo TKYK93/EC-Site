@@ -7,3 +7,6 @@ This project is a test EC site similar to Amazon.
 - Express
 - Stripe
 - MaterialUI
+
+## Demo
+https://test-ecsite.web.app
